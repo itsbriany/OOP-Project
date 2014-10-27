@@ -1,2 +1,2 @@
-Hello! This is test A!
+Hello! This is test A and B!
 And this is from TestA.
