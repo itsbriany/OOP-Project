@@ -5,7 +5,6 @@
  *      Author: connor
  */
 //Basic parser for now, will break up into headers and such later, just testing for now
-
 #include <iostream>
 #include <fstream>
 #include <string>
