@@ -29,23 +29,23 @@ int main()
 		cout << "Could not open file\n";
 	return 0;
 }
-//Doesn't account for multiple tags on one line
+
 void searchLine(string line)
 {
-	string remaining_line = ""; //After one tag is found, will use this to keep search line for more tags until empty
+	string remaining_line = ""; //After one tag is found, will use this to keep searching line for more tags until empty
 
 	int start = line.find("<a"); //Find anchor tags position, -1 if not found
 	int end = line.find("</a>") + 4; //Gives position of first character of ending tag. Add 4 to shift position to point to the end of the tag
 	int num_chars = end - start; //This is how many characters from start to include in substring
 
+	//substr(int,int) does not take in start and end pos. Takes in start pos, and the number of characters to include from the start position
 
 
-	if(start != -1 && num_chars != -1) //If anchor tag is actually found
+	if(start != -1 && end != 3) //If anchor tag is actually found. If end is not found, it would be (-1 + 4)
 	{
-
-		string tag = line.substr(start,num_chars); //Isolate to just anchor tag
 		remaining_line = line.substr(num_chars+start); //Substring from end of closing tag to the end of the line
 
+		string tag = line.substr(start,num_chars); //Isolate to just anchor tag
 		start = tag.find("\""); //Find position of fist ", start of actual link
 		tag = tag.substr(start+1); //Make new substring from 1 position after " to num_chars
 		num_chars = tag.find("\""); //Now can find num_charsing ", since substr only returns first instance
@@ -53,7 +53,7 @@ void searchLine(string line)
 		cout << tag << endl; //Print tag for now, will add to Queue for processing later
 
 	}
-	if(remaining_line.length()>0)
+	if(remaining_line.length()>0) //Recursive call, repeat above process with the remaining line after all text up to ending tag of first anchor is removed. If no anchors found, remaining_line will be empty
 		searchLine(remaining_line);
 }
 
