@@ -32,6 +32,7 @@ int main()
 
 void searchLine(string line)
 {
+
 	string remaining_line = ""; //After one tag is found, will use this to keep searching line for more tags until empty
 
 	int start = line.find("<a"); //Find anchor tags position, -1 if not found
@@ -55,6 +56,7 @@ void searchLine(string line)
 	}
 	if(remaining_line.length()>0) //Recursive call, repeat above process with the remaining line after all text up to ending tag of first anchor is removed. If no anchors found, remaining_line will be empty
 		searchLine(remaining_line);
+
 }
 
 
