@@ -32,7 +32,6 @@ int main()
 	return 0;
 }
 
-//To add: detect input char and use appropriate searching method. img parser will search for different criteria than a link
 void searchLine(string line, string key) //Reads in line to search and which tag to search for, i.e. 'a' for link, 'img' for image
 {
 
@@ -71,21 +70,34 @@ void parseIMG(string line)
 	string remaining_line = ""; //After one tag is found, will use this to keep searching line for more tags until empty
 
 	int start = line.find("<img");
-	int end = line.find(">");
+	int end = line.substr(start+1).find(">"); //Only look for close tag after <img open tag. Add one to start in case start=-1 and we dont get out of bounds error
+	end+=start; //End is found based on a substring, so add the value of start to get the end location on full string
 	int num_chars = end-start + 1;
 
 	if(start != -1 && end != -1)
 	{
-		remaining_line = line.substr(num_chars+start); //Substring from end of closing tag to the end of the line
-
-		string tag = line.substr(start, num_chars);
-
+		//****** Parse image link like above ***********
+		remaining_line = line.substr(num_chars+start-1); //Substring from end of closing tag to the end of the line
+		string tag = line.substr(start, num_chars+1);
+		cout << "Tag:" << tag << endl;
 		start = tag.find("\""); //Find position of fist ", start of actual link
-		tag = tag.substr(start+1); //Make new substring from 1 position after " to num_chars
+		tag = tag.substr(start+1); //Make new substring from 1 position after " to end
 		num_chars = tag.find("\""); //Now can find num_charsing ", since substr only returns first instance
-		tag = tag.substr(0, num_chars); //Now get substring of just link, we already have the start point, go to end point just found
-		cout << tag << endl; //Print tag for now, will add to Queue for processing later
+		string link_tag = tag.substr(0, num_chars); //Now get substring of just link, we already have the start point, go to end point just found
 
+		//********* Parse the Alt part **************
+		string alt_tag = tag.substr(num_chars+1);
+		//cout << "Alt tag: " << alt_tag << endl;
+		start = alt_tag.find("\"");
+		//cout << "Start: " << start
+		alt_tag = alt_tag.substr(start+1); //Make new substring from 1 position after " to end
+		num_chars = alt_tag.find("\"");
+		alt_tag = alt_tag.substr(0, num_chars);
+
+
+
+		cout << "Link: " << link_tag << endl; //Print tag for now, will add to Queue for processing later
+		cout << "Alt: " << alt_tag << endl;
 	}
 	if(remaining_line.length()>0) //Recursive call, repeat above process with the remaining line after all text up to ending tag of first anchor is removed. If no anchors found, remaining_line will be empty
 		parseIMG(remaining_line);
