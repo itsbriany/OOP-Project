@@ -11,6 +11,7 @@
 using namespace std;
 
 void searchLine(string, string);
+void parseIMG(string);
 
 
 int main()
@@ -21,7 +22,8 @@ int main()
 	{
 		while( getline(input_file, line)) //While more lines to get, read into line
 		{
-			searchLine(line, "a"); //Send each line to searchLine method
+			//searchLine(line, "a"); //Send each line to searchLine method
+			parseIMG(line);
 		}
 		input_file.close(); //close file when done
 	}
@@ -62,6 +64,31 @@ void searchLine(string line, string key) //Reads in line to search and which tag
 	if(remaining_line.length()>0) //Recursive call, repeat above process with the remaining line after all text up to ending tag of first anchor is removed. If no anchors found, remaining_line will be empty
 		searchLine(remaining_line, key);
 
+}
+
+void parseIMG(string line)
+{
+	string remaining_line = ""; //After one tag is found, will use this to keep searching line for more tags until empty
+
+	int start = line.find("<img");
+	int end = line.find(">");
+	int num_chars = end-start + 1;
+
+	if(start != -1 && end != -1)
+	{
+		remaining_line = line.substr(num_chars+start); //Substring from end of closing tag to the end of the line
+
+		string tag = line.substr(start, num_chars);
+
+		start = tag.find("\""); //Find position of fist ", start of actual link
+		tag = tag.substr(start+1); //Make new substring from 1 position after " to num_chars
+		num_chars = tag.find("\""); //Now can find num_charsing ", since substr only returns first instance
+		tag = tag.substr(0, num_chars); //Now get substring of just link, we already have the start point, go to end point just found
+		cout << tag << endl; //Print tag for now, will add to Queue for processing later
+
+	}
+	if(remaining_line.length()>0) //Recursive call, repeat above process with the remaining line after all text up to ending tag of first anchor is removed. If no anchors found, remaining_line will be empty
+		parseIMG(remaining_line);
 }
 
 
