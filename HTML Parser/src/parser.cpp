@@ -8,46 +8,56 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include "queue.h"
 using namespace std;
 
-struct imageTag {
-	string link;
-	string alt = NULL;
-};
-
-
-void searchLine(string);
-void parseIMG(string);
+void parser(char *,string);
+void parseLink(string, ostream&);
+void parseIMG(string, ostream&);
 string parseQuotes(string);
 
-int main()
+
+int main(int argc, char* argv[])
 {
+	parser(argv[1], argv[2]);
+	return 0;
+}
+
+
+void parser(char *filename, string tag)
+{
+	ofstream output_file;	//Output file to write images to
+	if (tag == "a") //determines title of output file
+		output_file.open("links.txt");	//Will make file if it doesn't exist
+
+	else //tag = "img"
+		output_file.open("images.txt");
+
+
 	string line; //Will read each line of file
-	ifstream input_file ("text.txt"); //Will have this read in later
+	ifstream input_file (filename); //Will have this read in later
 	if (input_file.is_open()) //If file is found and opened
 	{
 		while( getline(input_file, line)) //While more lines to get, read into line
 		{
-			//searchLine(line); //Send each line to searchLine method
-			parseIMG(line);
+			if(tag == "a") //call correct parser method
+				parseLink(line, output_file);
+			else
+				parseIMG(line, output_file);
 		}
 		input_file.close(); //close file when done
 	}
 	else
 		cout << "Could not open file\n";
-	return 0;
 }
 
-void searchLine(string line) //Reads in line to search
+void parseLink(string line, ostream& output_file) //Reads in line to search
 {
 	string remaining_line = ""; //After one tag is found, will use this to keep searching line for more tags until empty
+
 
 	int start = line.find("<a"); //Find anchor tags position, -1 if not found
 	int end = line.find("</a>") + 4; //Gives position of first character of ending tag. Add 4 to shift position to point to the end of the tag
 	int num_chars = end - start; //This is how many characters from start to include in substring
-
-	//substr(int,int) does not take in start and end pos. Takes in start pos, and the number of characters to include from the start position
 
 
 	if(start != -1 && end != 3) //If anchor tag is actually found. If end is not found, it would be (-1 + 4)
@@ -56,20 +66,21 @@ void searchLine(string line) //Reads in line to search
 		remaining_line = line.substr(num_chars+start); //Substring from end of closing tag to the end of the line
 		string tag = line.substr(start,num_chars); //Isolate to just anchor tag
 		tag = parseQuotes(tag); //Send anchor tag to get link parsed out
-		cout << tag << endl; //Print tag for now, will add to Queue for processing later
+		output_file << tag << endl; //Print tag to the output file
 
 	}
 	if(remaining_line.length()>0) //Recursive call, repeat above process with the remaining line after all text up to ending tag of first anchor is removed. If no anchors found, remaining_line will be empty
-		searchLine(remaining_line);
+		parseLink(remaining_line, output_file);
+
 
 }
-//Assumes alt portion is there, will add check for it later
-void parseIMG(string line)
+
+void parseIMG(string line, ostream& output_file)
 {
 	string remaining_line = ""; //After one tag is found, will use this to keep searching line for more tags until empty
 
 	int start = line.find("<img");
-	int end = line.substr(start+1).find(">"); //Only look for close tag after <img open tag. Add one to start in case start=-1 and we dont get out of bounds error
+	int end = line.substr(start+1).find(">"); //Only look for close tag after <img open tag. Add one to start in case start=-1 so we dont get out of bounds error
 	end+=start; //End is found based on a substring, so add the value of start to get the end location on full string
 	int num_chars = end-start + 1; //How many characters to get after start point in substring
 
@@ -78,26 +89,27 @@ void parseIMG(string line)
 		//****** Parse image link like above ***********
 		remaining_line = line.substr(num_chars+start-1); //Substring from end of closing tag to the end of the line
 		string tag = line.substr(start, num_chars+1);
-		//string link_tag = parseQuotes(tag);
 
-
-		start = tag.find("\""); //Find position of fist ", start of actual link
+		start = tag.find("src=\""); //Find position of src in tag
+		start +=4; //Move start point to first " after src
 		tag = tag.substr(start+1); //Make new substring from 1 position after " to end
 		num_chars = tag.find("\""); //Now can find num_charsing ", since substr only returns first instance
 		string link_tag = tag.substr(0, num_chars); //Now get substring of just link, we already have the start point, go to end point just found
 
 
-
-
 		//********* Parse the Alt part **************
-		string alt_tag = tag.substr(num_chars+1);
-		alt_tag = parseQuotes(alt_tag);
+		int alt = tag.find("alt"); //Check if alt is part of tag
+		if(alt > 0)
+		{
+			string alt_tag = tag.substr(alt); //Parse string to just the alt component
+			alt_tag = parseQuotes(alt_tag); //Send to parseQuote method to extract what's between the quotes
+			link_tag += " " + alt_tag;
+		}
+		output_file << link_tag << endl;	//Add tag to output file
 
-		cout << "Link: " << link_tag << endl; //Print tag for now, will add to Queue for processing later
-		cout << "Alt: " << alt_tag << endl;
 	}
 	if(remaining_line.length()>0) //Recursive call, repeat above process with the remaining line after all text up to ending tag of first anchor is removed. If no anchors found, remaining_line will be empty
-		parseIMG(remaining_line);
+		parseIMG(remaining_line, output_file);
 }
 
 string parseQuotes(string line)
@@ -109,4 +121,5 @@ string parseQuotes(string line)
 
 	return sub;
 }
+
 
