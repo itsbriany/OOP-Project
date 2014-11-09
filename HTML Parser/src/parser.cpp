@@ -8,18 +8,18 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include "queue.h"
 using namespace std;
-
-void searchLine(string);
-void parseIMG(string);
-
-string parseQuotes(string);
 
 struct imageTag {
 	string link;
 	string alt = NULL;
 };
 
+
+void searchLine(string);
+void parseIMG(string);
+string parseQuotes(string);
 
 int main()
 {
@@ -29,8 +29,8 @@ int main()
 	{
 		while( getline(input_file, line)) //While more lines to get, read into line
 		{
-			searchLine(line); //Send each line to searchLine method
-			//parseIMG(line);
+			//searchLine(line); //Send each line to searchLine method
+			parseIMG(line);
 		}
 		input_file.close(); //close file when done
 	}
@@ -41,8 +41,6 @@ int main()
 
 void searchLine(string line) //Reads in line to search
 {
-
-
 	string remaining_line = ""; //After one tag is found, will use this to keep searching line for more tags until empty
 
 	int start = line.find("<a"); //Find anchor tags position, -1 if not found
@@ -65,7 +63,7 @@ void searchLine(string line) //Reads in line to search
 		searchLine(remaining_line);
 
 }
-
+//Assumes alt portion is there, will add check for it later
 void parseIMG(string line)
 {
 	string remaining_line = ""; //After one tag is found, will use this to keep searching line for more tags until empty
