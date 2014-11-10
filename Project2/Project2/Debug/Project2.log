@@ -1,0 +1,8 @@
+﻿Build started 11/9/2014 9:12:46 PM.
+     1>Project "c:\Users\Admin\documents\visual studio 2013\Projects\Project2\Project2\Project2.vcxproj" on node 2 (Build target(s)).
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppCommon.targets(607,5): error : Element <SubSystem> has an invalid value of " WINDOWS".
+     1>Done Building Project "c:\Users\Admin\documents\visual studio 2013\Projects\Project2\Project2\Project2.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.04
