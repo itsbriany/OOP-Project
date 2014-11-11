@@ -44,6 +44,8 @@ namespace CalculatorExample {
 	private: System::Windows::Forms::Button^  button3;
 	private: System::Windows::Forms::Button^  button4;
 	private: System::Windows::Forms::Button^  button5;
+	private: System::Windows::Forms::MonthCalendar^  monthCalendar1;
+	private: System::Windows::Forms::Label^  label4;
 	protected:
 
 	private:
@@ -69,6 +71,8 @@ namespace CalculatorExample {
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->button5 = (gcnew System::Windows::Forms::Button());
+			this->monthCalendar1 = (gcnew System::Windows::Forms::MonthCalendar());
+			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// textBox1
@@ -161,11 +165,30 @@ namespace CalculatorExample {
 			this->button5->UseVisualStyleBackColor = true;
 			this->button5->Click += gcnew System::EventHandler(this, &Calculator::button5_Click);
 			// 
+			// monthCalendar1
+			// 
+			this->monthCalendar1->Location = System::Drawing::Point(327, 13);
+			this->monthCalendar1->Name = L"monthCalendar1";
+			this->monthCalendar1->TabIndex = 10;
+			this->monthCalendar1->DateChanged += gcnew System::Windows::Forms::DateRangeEventHandler(this, &Calculator::monthCalendar1_DateChanged);
+			// 
+			// label4
+			// 
+			this->label4->AutoSize = true;
+			this->label4->Location = System::Drawing::Point(433, 199);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(35, 13);
+			this->label4->TabIndex = 11;
+			this->label4->Text = L"label4";
+			this->label4->Click += gcnew System::EventHandler(this, &Calculator::label4_Click);
+			// 
 			// Calculator
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(284, 261);
+			this->ClientSize = System::Drawing::Size(584, 261);
+			this->Controls->Add(this->label4);
+			this->Controls->Add(this->monthCalendar1);
 			this->Controls->Add(this->button5);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
@@ -220,6 +243,11 @@ private: System::Void button5_Click(System::Object^  sender, System::EventArgs^ 
 			 label3->Text = System::Convert::ToString(result);
 }
 private: System::Void label1_Click(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void monthCalendar1_DateChanged(System::Object^  sender, System::Windows::Forms::DateRangeEventArgs^  e) {
+			 label4->Text = "I have changed!";
+}
+private: System::Void label4_Click(System::Object^  sender, System::EventArgs^  e) {
 }
 };
 }

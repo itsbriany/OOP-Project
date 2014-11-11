@@ -1,8 +1,17 @@
-﻿Build started 11/9/2014 9:12:46 PM.
-     1>Project "c:\Users\Admin\documents\visual studio 2013\Projects\Project2\Project2\Project2.vcxproj" on node 2 (Build target(s)).
-     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppCommon.targets(607,5): error : Element <SubSystem> has an invalid value of " WINDOWS".
-     1>Done Building Project "c:\Users\Admin\documents\visual studio 2013\Projects\Project2\Project2\Project2.vcxproj" (Build target(s)) -- FAILED.
+﻿Build started 11/10/14 4:41:14 PM.
+     1>Project "C:\Users\Evil_Fuzzball\Documents\GitHub\OOP-Project\Project2\Project2\Project2.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\\" /AI"C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral" /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\\" /Zi /clr /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\mscorlib.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.DirectoryServices.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Xml.dll" /analyze- /errorReport:prompt /clr:nostdlib MyForm.cpp
+         MyForm.cpp
+     1>c:\users\evil_fuzzball\documents\github\oop-project\project2\project2\MyForm.h(195): error C2065: 'filename' : undeclared identifier
+     1>c:\users\evil_fuzzball\documents\github\oop-project\project2\project2\MyForm.h(195): error C2228: left of '.txt' must have class/struct/union
+                 type is 'unknown-type'
+     1>c:\users\evil_fuzzball\documents\github\oop-project\project2\project2\MyForm.h(199): error C2143: syntax error : missing ';' before ')'
+     1>c:\users\evil_fuzzball\documents\github\oop-project\project2\project2\MyForm.h(206): error C2664: 'void System::Windows::Forms::TextBox::Text::set(System::String ^)' : cannot convert argument 1 from 'std::string' to 'System::String ^'
+                 No user-defined-conversion operator available, or
+                 No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+     1>Done Building Project "C:\Users\Evil_Fuzzball\Documents\GitHub\OOP-Project\Project2\Project2\Project2.vcxproj" (Build target(s)) -- FAILED.
 
 Build FAILED.
 
-Time Elapsed 00:00:00.04
+Time Elapsed 00:00:02.12

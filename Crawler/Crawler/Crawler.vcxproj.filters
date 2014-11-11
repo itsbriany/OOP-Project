@@ -18,6 +18,9 @@
     <ClCompile Include="CrawlerForm.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CurlBasic.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CrawlerForm.h">

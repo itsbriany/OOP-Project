@@ -48,6 +48,7 @@ namespace Project2 {
 	private: System::Windows::Forms::TextBox^  textBox2;
 	private: System::DirectoryServices::DirectoryEntry^  directoryEntry1;
 	private: System::Windows::Forms::Label^  label2;
+	private: System::Windows::Forms::HelpProvider^  helpProvider1;
 
 
 
@@ -71,6 +72,7 @@ namespace Project2 {
 		void InitializeComponent(void)
 		{
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
+			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
@@ -78,7 +80,7 @@ namespace Project2 {
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->directoryEntry1 = (gcnew System::DirectoryServices::DirectoryEntry());
-			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->helpProvider1 = (gcnew System::Windows::Forms::HelpProvider());
 			this->tabPage2->SuspendLayout();
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
@@ -95,6 +97,16 @@ namespace Project2 {
 			this->tabPage2->TabIndex = 1;
 			this->tabPage2->Text = L"Images";
 			this->tabPage2->UseVisualStyleBackColor = true;
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Location = System::Drawing::Point(147, 12);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(42, 13);
+			this->label2->TabIndex = 1;
+			this->label2->Text = L"Results";
+			this->label2->Click += gcnew System::EventHandler(this, &MyForm::label2_Click);
 			// 
 			// textBox2
 			// 
@@ -155,16 +167,6 @@ namespace Project2 {
 			this->textBox1->TabIndex = 0;
 			this->textBox1->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox1_TextChanged);
 			// 
-			// label2
-			// 
-			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(147, 12);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(42, 13);
-			this->label2->TabIndex = 1;
-			this->label2->Text = L"Results";
-			this->label2->Click += gcnew System::EventHandler(this, &MyForm::label2_Click);
-			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -204,6 +206,7 @@ private: System::Void textBox2_TextChanged(System::Object^  sender, System::Even
 	file.close();	// closes the file
 
 	textBox2->Text = content;	//should print out the content
+	
 }
 private: System::Void label2_Click(System::Object^  sender, System::EventArgs^  e) {
 }
