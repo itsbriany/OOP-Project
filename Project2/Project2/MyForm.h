@@ -240,7 +240,7 @@ private: System::Void label2_Click(System::Object^  sender, System::EventArgs^  
 }
 private: System::Void folderPath_Click(System::Object^  sender, System::EventArgs^  e) {
 	OpenFileDialog^ openFileDialog1 = gcnew OpenFileDialog; //Open up directory broswer
-	openFileDialog1->InitialDirectory = "D:\Documents\GitHub\OOP\Project2"; //Choose directory
+	openFileDialog1->InitialDirectory = "C:\\"; //Choose directory
 	openFileDialog1->Filter = "txt files (*.txt)|*.txt|html files (*.html)|*.html|php files (*.php)|*.php"; //Make the list of available file types to choose from
 	openFileDialog1->FilterIndex = 2; 
 	openFileDialog1->RestoreDirectory = true;
