@@ -16,13 +16,6 @@ void parseIMG(string, ostream&);
 string parseQuotes(string);
 
 
-int main(int argc, char* argv[])
-{
-	parser(argv[1], argv[2]);
-	return 0;
-}
-
-
 void parser(char *filename, string tag)
 {
 	ofstream output_file;	//Output file to write images to
