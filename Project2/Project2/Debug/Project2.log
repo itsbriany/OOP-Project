@@ -1,6 +1,2 @@
-﻿  MyForm.cpp
-d:\documents\github\oop\project2\project2\MyForm.h(243): warning C4129: 'D' : unrecognized character escape sequence
-d:\documents\github\oop\project2\project2\MyForm.h(243): warning C4129: 'G' : unrecognized character escape sequence
-d:\documents\github\oop\project2\project2\MyForm.h(243): warning C4129: 'O' : unrecognized character escape sequence
-d:\documents\github\oop\project2\project2\MyForm.h(243): warning C4129: 'P' : unrecognized character escape sequence
+﻿  CrawlerApp.cpp
   Project2.vcxproj -> D:\Documents\GitHub\OOP\Project2\Debug\Project2.exe

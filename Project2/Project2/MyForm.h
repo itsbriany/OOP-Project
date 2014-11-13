@@ -1,8 +1,7 @@
 #pragma once
-#include <fstream>
-#include <iostream>
-#include <string>
-using namespace std;
+
+#include "Crawler.h" //include the functionalities to select the folder path
+#include "parser.h" //include the functionalities of the parser
 
 namespace Project2 {
 
@@ -12,6 +11,9 @@ namespace Project2 {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace std;
+	using namespace Crawler; //use the Crawler namespace
+	using namespace Parse;   //use the Parse namespace
 
 	/// <summary>
 	/// Summary for MyForm
@@ -41,17 +43,44 @@ namespace Project2 {
 	private: System::Windows::Forms::TabPage^  tabPage2;
 	protected:
 	private: System::Windows::Forms::TabControl^  tabControl1;
-	private: System::Windows::Forms::TabPage^  tabPage1;
-	private: System::Windows::Forms::Label^  label1;
-	private: System::Windows::Forms::TextBox^  textBox1;
-	private: System::Windows::Forms::Button^  button1;
-	private: System::Windows::Forms::TextBox^  textBox2;
-	private: System::DirectoryServices::DirectoryEntry^  directoryEntry1;
-	private: System::Windows::Forms::Label^  label2;
-	private: System::Windows::Forms::Button^  folderPath;
+	private: System::Windows::Forms::TextBox^  finalResult;
 
-	private: System::Windows::Forms::Label^  selectedFilePath;
+
+
+
+
+	private: System::DirectoryServices::DirectoryEntry^  directoryEntry1;
+
+
+
+
 	private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
+	private: System::Windows::Forms::TabPage^  tabPage3;
+	private: System::Windows::Forms::Button^  browseFileButton;
+
+
+	private: System::Windows::Forms::Label^  label3;
+	private: System::Windows::Forms::Label^  selectFileLabel;
+
+	private: System::Windows::Forms::Button^  parseButton;
+	private: System::Windows::Forms::Button^  anchorTagButton;
+	private: System::Windows::Forms::Button^  imageTagButton;
+
+
+
+
+
+
+	private: System::Windows::Forms::Label^  label5;
+	private: System::Windows::Forms::Label^  selectedTagLabel;
+
+	private: System::Windows::Forms::Button^  readFileButton;
+	private: System::Windows::Forms::Label^  pathResult;
+	private: System::Windows::Forms::Label^  tagResult;
+
+
+
+
 
 
 
@@ -68,6 +97,10 @@ namespace Project2 {
 		/// </summary>
 		System::ComponentModel::Container ^components;
 
+
+	/*OUR PRIVATE VARIABLES*/
+	private:
+		Parser parser; //Initialize parser
 #pragma region Windows Form Designer generated code
 		/// <summary>
 		/// Required method for Designer support - do not modify
@@ -76,132 +109,193 @@ namespace Project2 {
 		void InitializeComponent(void)
 		{
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
-			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->finalResult = (gcnew System::Windows::Forms::TextBox());
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
-			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
-			this->selectedFilePath = (gcnew System::Windows::Forms::Label());
-			this->folderPath = (gcnew System::Windows::Forms::Button());
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->tabPage3 = (gcnew System::Windows::Forms::TabPage());
+			this->tagResult = (gcnew System::Windows::Forms::Label());
+			this->pathResult = (gcnew System::Windows::Forms::Label());
+			this->selectedTagLabel = (gcnew System::Windows::Forms::Label());
+			this->readFileButton = (gcnew System::Windows::Forms::Button());
+			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->anchorTagButton = (gcnew System::Windows::Forms::Button());
+			this->imageTagButton = (gcnew System::Windows::Forms::Button());
+			this->parseButton = (gcnew System::Windows::Forms::Button());
+			this->selectFileLabel = (gcnew System::Windows::Forms::Label());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->browseFileButton = (gcnew System::Windows::Forms::Button());
 			this->directoryEntry1 = (gcnew System::DirectoryServices::DirectoryEntry());
 			this->openFileDialog1 = (gcnew System::Windows::Forms::OpenFileDialog());
 			this->tabPage2->SuspendLayout();
 			this->tabControl1->SuspendLayout();
-			this->tabPage1->SuspendLayout();
+			this->tabPage3->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// tabPage2
 			// 
-			this->tabPage2->Controls->Add(this->label2);
-			this->tabPage2->Controls->Add(this->textBox2);
+			this->tabPage2->Controls->Add(this->finalResult);
 			this->tabPage2->Location = System::Drawing::Point(4, 25);
 			this->tabPage2->Margin = System::Windows::Forms::Padding(4);
 			this->tabPage2->Name = L"tabPage2";
 			this->tabPage2->Padding = System::Windows::Forms::Padding(4);
-			this->tabPage2->Size = System::Drawing::Size(479, 349);
+			this->tabPage2->Size = System::Drawing::Size(676, 349);
 			this->tabPage2->TabIndex = 1;
-			this->tabPage2->Text = L"Images";
+			this->tabPage2->Text = L"Results";
 			this->tabPage2->UseVisualStyleBackColor = true;
 			// 
-			// label2
+			// finalResult
 			// 
-			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(196, 15);
-			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(55, 17);
-			this->label2->TabIndex = 1;
-			this->label2->Text = L"Results";
-			this->label2->Click += gcnew System::EventHandler(this, &MyForm::label2_Click);
-			// 
-			// textBox2
-			// 
-			this->textBox2->Location = System::Drawing::Point(35, 47);
-			this->textBox2->Margin = System::Windows::Forms::Padding(4);
-			this->textBox2->Multiline = true;
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(392, 265);
-			this->textBox2->TabIndex = 0;
-			this->textBox2->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox2_TextChanged);
+			this->finalResult->Location = System::Drawing::Point(35, 47);
+			this->finalResult->Margin = System::Windows::Forms::Padding(4);
+			this->finalResult->Multiline = true;
+			this->finalResult->Name = L"finalResult";
+			this->finalResult->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
+			this->finalResult->Size = System::Drawing::Size(616, 265);
+			this->finalResult->TabIndex = 0;
+			this->finalResult->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox2_TextChanged);
 			// 
 			// tabControl1
 			// 
-			this->tabControl1->Controls->Add(this->tabPage1);
+			this->tabControl1->Controls->Add(this->tabPage3);
 			this->tabControl1->Controls->Add(this->tabPage2);
 			this->tabControl1->Location = System::Drawing::Point(0, 1);
 			this->tabControl1->Margin = System::Windows::Forms::Padding(4);
 			this->tabControl1->Name = L"tabControl1";
 			this->tabControl1->SelectedIndex = 0;
-			this->tabControl1->Size = System::Drawing::Size(487, 378);
+			this->tabControl1->Size = System::Drawing::Size(684, 378);
 			this->tabControl1->TabIndex = 0;
 			// 
-			// tabPage1
+			// tabPage3
 			// 
-			this->tabPage1->Controls->Add(this->selectedFilePath);
-			this->tabPage1->Controls->Add(this->folderPath);
-			this->tabPage1->Controls->Add(this->button1);
-			this->tabPage1->Controls->Add(this->label1);
-			this->tabPage1->Controls->Add(this->textBox1);
-			this->tabPage1->Location = System::Drawing::Point(4, 25);
-			this->tabPage1->Margin = System::Windows::Forms::Padding(4);
-			this->tabPage1->Name = L"tabPage1";
-			this->tabPage1->Padding = System::Windows::Forms::Padding(4);
-			this->tabPage1->Size = System::Drawing::Size(479, 349);
-			this->tabPage1->TabIndex = 0;
-			this->tabPage1->Text = L"Search Tab";
-			this->tabPage1->UseVisualStyleBackColor = true;
+			this->tabPage3->Controls->Add(this->tagResult);
+			this->tabPage3->Controls->Add(this->pathResult);
+			this->tabPage3->Controls->Add(this->selectedTagLabel);
+			this->tabPage3->Controls->Add(this->readFileButton);
+			this->tabPage3->Controls->Add(this->label5);
+			this->tabPage3->Controls->Add(this->anchorTagButton);
+			this->tabPage3->Controls->Add(this->imageTagButton);
+			this->tabPage3->Controls->Add(this->parseButton);
+			this->tabPage3->Controls->Add(this->selectFileLabel);
+			this->tabPage3->Controls->Add(this->label3);
+			this->tabPage3->Controls->Add(this->browseFileButton);
+			this->tabPage3->Location = System::Drawing::Point(4, 25);
+			this->tabPage3->Name = L"tabPage3";
+			this->tabPage3->Padding = System::Windows::Forms::Padding(3);
+			this->tabPage3->Size = System::Drawing::Size(676, 349);
+			this->tabPage3->TabIndex = 2;
+			this->tabPage3->Text = L"Parse";
+			this->tabPage3->UseVisualStyleBackColor = true;
+			this->tabPage3->Click += gcnew System::EventHandler(this, &MyForm::tabPage3_Click);
 			// 
-			// selectedFilePath
+			// tagResult
 			// 
-			this->selectedFilePath->AutoSize = true;
-			this->selectedFilePath->Location = System::Drawing::Point(130, 84);
-			this->selectedFilePath->Name = L"selectedFilePath";
-			this->selectedFilePath->Size = System::Drawing::Size(93, 17);
-			this->selectedFilePath->TabIndex = 4;
-			this->selectedFilePath->Text = L"Select a file...";
+			this->tagResult->AutoSize = true;
+			this->tagResult->Location = System::Drawing::Point(140, 231);
+			this->tagResult->Name = L"tagResult";
+			this->tagResult->Size = System::Drawing::Size(0, 17);
+			this->tagResult->TabIndex = 10;
 			// 
-			// folderPath
+			// pathResult
 			// 
-			this->folderPath->Location = System::Drawing::Point(130, 36);
-			this->folderPath->Name = L"folderPath";
-			this->folderPath->Size = System::Drawing::Size(190, 23);
-			this->folderPath->TabIndex = 3;
-			this->folderPath->Text = L"Select a file to textcrawl";
-			this->folderPath->UseVisualStyleBackColor = true;
-			this->folderPath->Click += gcnew System::EventHandler(this, &MyForm::folderPath_Click);
+			this->pathResult->AutoSize = true;
+			this->pathResult->Location = System::Drawing::Point(140, 71);
+			this->pathResult->Name = L"pathResult";
+			this->pathResult->Size = System::Drawing::Size(0, 17);
+			this->pathResult->TabIndex = 9;
 			// 
-			// button1
+			// selectedTagLabel
 			// 
-			this->button1->Location = System::Drawing::Point(193, 247);
-			this->button1->Margin = System::Windows::Forms::Padding(4);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(100, 28);
-			this->button1->TabIndex = 2;
-			this->button1->Text = L"search";
-			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
+			this->selectedTagLabel->AutoSize = true;
+			this->selectedTagLabel->Location = System::Drawing::Point(25, 231);
+			this->selectedTagLabel->Name = L"selectedTagLabel";
+			this->selectedTagLabel->Size = System::Drawing::Size(96, 17);
+			this->selectedTagLabel->TabIndex = 8;
+			this->selectedTagLabel->Text = L"Selected Tag:";
 			// 
-			// label1
+			// readFileButton
 			// 
-			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(127, 195);
-			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(219, 17);
-			this->label1->TabIndex = 1;
-			this->label1->Text = L"Enter what you want to search for";
-			this->label1->Click += gcnew System::EventHandler(this, &MyForm::label1_Click);
+			this->readFileButton->Location = System::Drawing::Point(350, 25);
+			this->readFileButton->Name = L"readFileButton";
+			this->readFileButton->Size = System::Drawing::Size(113, 33);
+			this->readFileButton->TabIndex = 7;
+			this->readFileButton->Text = L"Read File!";
+			this->readFileButton->UseVisualStyleBackColor = true;
+			this->readFileButton->Click += gcnew System::EventHandler(this, &MyForm::readFileButton_Click);
 			// 
-			// textBox1
+			// label5
 			// 
-			this->textBox1->Location = System::Drawing::Point(131, 215);
-			this->textBox1->Margin = System::Windows::Forms::Padding(4);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(216, 22);
-			this->textBox1->TabIndex = 0;
-			this->textBox1->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox1_TextChanged);
+			this->label5->AutoSize = true;
+			this->label5->Location = System::Drawing::Point(24, 150);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(121, 17);
+			this->label5->TabIndex = 6;
+			this->label5->Text = L"Select tags to filer";
+			this->label5->Click += gcnew System::EventHandler(this, &MyForm::label5_Click);
+			// 
+			// anchorTagButton
+			// 
+			this->anchorTagButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
+																				static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->anchorTagButton->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->anchorTagButton->Location = System::Drawing::Point(195, 134);
+			this->anchorTagButton->Name = L"anchorTagButton";
+			this->anchorTagButton->Size = System::Drawing::Size(113, 33);
+			this->anchorTagButton->TabIndex = 5;
+			this->anchorTagButton->Text = L"anchor";
+			this->anchorTagButton->UseVisualStyleBackColor = false;
+			this->anchorTagButton->Click += gcnew System::EventHandler(this, &MyForm::anchorTagButton_Click);
+			// 
+			// imageTagButton
+			// 
+			this->imageTagButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)),
+																			   static_cast<System::Int32>(static_cast<System::Byte>(128)));
+			this->imageTagButton->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->imageTagButton->Location = System::Drawing::Point(350, 134);
+			this->imageTagButton->Name = L"imageTagButton";
+			this->imageTagButton->Size = System::Drawing::Size(113, 33);
+			this->imageTagButton->TabIndex = 4;
+			this->imageTagButton->Text = L"image";
+			this->imageTagButton->UseVisualStyleBackColor = false;
+			this->imageTagButton->Click += gcnew System::EventHandler(this, &MyForm::imageTagButton_Click);
+			// 
+			// parseButton
+			// 
+			this->parseButton->Location = System::Drawing::Point(27, 285);
+			this->parseButton->Name = L"parseButton";
+			this->parseButton->Size = System::Drawing::Size(113, 33);
+			this->parseButton->TabIndex = 3;
+			this->parseButton->Text = L"Parse!";
+			this->parseButton->UseVisualStyleBackColor = true;
+			this->parseButton->Click += gcnew System::EventHandler(this, &MyForm::parseButton_Click);
+			// 
+			// selectFileLabel
+			// 
+			this->selectFileLabel->AutoSize = true;
+			this->selectFileLabel->Location = System::Drawing::Point(24, 71);
+			this->selectFileLabel->Name = L"selectFileLabel";
+			this->selectFileLabel->Size = System::Drawing::Size(97, 17);
+			this->selectFileLabel->TabIndex = 2;
+			this->selectFileLabel->Text = L"Selected File: ";
+			this->selectFileLabel->Click += gcnew System::EventHandler(this, &MyForm::label4_Click);
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Location = System::Drawing::Point(24, 33);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(137, 17);
+			this->label3->TabIndex = 1;
+			this->label3->Text = L"Select a file to parse";
+			this->label3->Click += gcnew System::EventHandler(this, &MyForm::label3_Click);
+			// 
+			// browseFileButton
+			// 
+			this->browseFileButton->Location = System::Drawing::Point(195, 25);
+			this->browseFileButton->Name = L"browseFileButton";
+			this->browseFileButton->Size = System::Drawing::Size(113, 33);
+			this->browseFileButton->TabIndex = 0;
+			this->browseFileButton->Text = L"Browse...";
+			this->browseFileButton->UseVisualStyleBackColor = true;
+			this->browseFileButton->Click += gcnew System::EventHandler(this, &MyForm::button2_Click);
 			// 
 			// openFileDialog1
 			// 
@@ -211,16 +305,17 @@ namespace Project2 {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(488, 377);
+			this->ClientSize = System::Drawing::Size(697, 379);
 			this->Controls->Add(this->tabControl1);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"MyForm";
-			this->Text = L"MyForm";
+			this->Text = L"Crawler Application";
 			this->tabPage2->ResumeLayout(false);
 			this->tabPage2->PerformLayout();
 			this->tabControl1->ResumeLayout(false);
-			this->tabPage1->ResumeLayout(false);
-			this->tabPage1->PerformLayout();
+			this->tabPage3->ResumeLayout(false);
+			this->tabPage3->PerformLayout();
 			this->ResumeLayout(false);
 
 		}
@@ -238,48 +333,40 @@ private: System::Void textBox2_TextChanged(System::Object^  sender, System::Even
 }
 private: System::Void label2_Click(System::Object^  sender, System::EventArgs^  e) {
 }
-private: System::Void folderPath_Click(System::Object^  sender, System::EventArgs^  e) {
-	OpenFileDialog^ openFileDialog1 = gcnew OpenFileDialog; //Open up directory broswer
-	openFileDialog1->InitialDirectory = "C:\\"; //Choose directory
-	openFileDialog1->Filter = "txt files (*.txt)|*.txt|html files (*.html)|*.html|php files (*.php)|*.php"; //Make the list of available file types to choose from
-	openFileDialog1->FilterIndex = 2; 
-	openFileDialog1->RestoreDirectory = true;
-
-	if (openFileDialog1->ShowDialog() == System::Windows::Forms::DialogResult::OK) //Make sure the selection is successful
-	{
-		selectedFilePath->Text = openFileDialog1->FileName; //Set the label below the browsing button to the path of the selected file
-	}
-}
-private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e)
+private: System::Void tabPage3_Click(System::Object^  sender, System::EventArgs^  e)
 {
-	String^ fileName = selectedFilePath->Text; //The file name as a visual C++ string
-	try
-	{
-		if (!(fileName->Contains(".html") || //Check the file type to make sure nothing funky is going on
-			!fileName->Contains(".php") ||
-			!fileName->Contains(".txt")))
-		{
-			textBox2->Text = "Please select a .html, .php, or .txt file";
-		}
-		else
-		{
-			IO::StreamReader^ reader = IO::File::OpenText(fileName); //Visual C++ IO reader
-			String^ content; //The final output result
-			String^ currentLine; //The current line being read
-			while ((currentLine = reader->ReadLine()) != nullptr) //Read until EOF
-			{
-				content += currentLine + Environment::NewLine; //Concatenate the current line to the content
-			}
-			textBox2->Text = content; //Set the textbox to the content
-		}
-	}
-	catch (Exception^ e)
-	{
-		if (dynamic_cast<IO::FileNotFoundException^>(e)) //File not found
-			textBox2->Text = fileName + " not found";
-		else
-			textBox2->Text = "Problem reading " + fileName; //Problem reading file
-	}
+}
+private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e)
+{
+	browse(pathResult);
+}
+private: System::Void label3_Click(System::Object^  sender, System::EventArgs^  e)
+{
+}
+private: System::Void label4_Click(System::Object^  sender, System::EventArgs^  e)
+{
+}
+private: System::Void label5_Click(System::Object^  sender, System::EventArgs^  e)
+{
+}
+private: System::Void readFileButton_Click(System::Object^  sender, System::EventArgs^  e)
+{
+	readFile(pathResult, finalResult, tabControl1);
+}
+
+private: System::Void anchorTagButton_Click(System::Object^  sender, System::EventArgs^  e)
+{
+	tagResult->Text = "anchor";
+	parser.setTag("a");
+}
+private: System::Void imageTagButton_Click(System::Object^  sender, System::EventArgs^  e)
+{
+	tagResult->Text = "image";
+	parser.setTag("img");
+}
+private: System::Void parseButton_Click(System::Object^  sender, System::EventArgs^  e)
+{
+	parser.parse(pathResult->Text, finalResult, tabControl1);
 }
 };
 }
