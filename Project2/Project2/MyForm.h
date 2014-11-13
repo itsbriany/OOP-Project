@@ -298,7 +298,9 @@ namespace Project2 {
 			this->browseFileButton->Click += gcnew System::EventHandler(this, &MyForm::button2_Click);
 			// 
 			// openFileDialog1
+			// 
 			this->openFileDialog1->FileName = L"openFileDialog1";
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);

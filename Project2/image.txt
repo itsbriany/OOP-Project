@@ -1,0 +1,2 @@
+<img id="t1" src="media/turtle1.JPG" alt="Picture of turtle"><img src="media/gc.gif" alt="Geocaching">
+<img src="media/turntable.jpg" alt="Turntable">

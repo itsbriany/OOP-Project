@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+    <head><link rel="canonical" href="http://msdn.microsoft.com/en-us/library/43fzdd42(v=vs.110).aspx" />
+        <title>Visual Studio cannot open a designer for the file because the class within it does not inherit from a class that can be visually designed</title>
+        
+        
+
+
+
+
+
+
+<meta name="DCS.dcsuri" content="/en-us/library/43fzdd42(d=default,l=en-us,v=vs.110).aspx" />
+
+<meta name="NormalizedUrl" content="http://msdn.microsoft.com/en-us/library/43fzdd42(d=default,l=en-us,v=vs.110).aspx" />
+
+<meta name="ms.normalizedurl" content="http://msdn.microsoft.com/en-us/library/43fzdd42(d=default,l=en-us,v=vs.110).aspx" />
+
+<meta name="DCSext.ProductFamily" content="LIB_DG" />
+
+<meta name="DCSext.Product" content="NDP_WinForms" />
+
+<meta name="DCSext.Title" content="Visual Studio cannot open a designer for the file because the class within it does not inherit from a class that can be visually designed" />
+
+<meta name="VotingContextUrl" content="http://msdn.microsoft.com/en-us/library/43fzdd42(d=default,l=en-us,v=vs.110).aspx" />
+
+<meta name="MN" content="FB361397-8:45:15 PM" />
+
+<meta name="Search.ShortId" content="43fzdd42" />
+
+<meta name="ms.shortidmsdn" content="43fzdd42" />
+
+<meta name="Ms.Locale" content="en-us" />
+
+<meta name="ms.prodver" content="VS.110" />
+
+<meta name="ms.contentlang" content="EN" />
+
+<meta name="ms.lang" content="EN" />
+
+<meta name="ms.loc" content="US" />
+
+<meta name="ms.sitever" content="2014.10.24.3" />
+
+<meta name="ms.assetid" content="b20e6404-c3bb-4e05-b41a-0550ab204a22" />
+
+<meta name="ms.auth" content="0" />
+
+
+
+
+
+
+
+
+        
+    <link rel="stylesheet" type="text/css" href="http://i3.msdn.microsoft.com/Combined.css?resources=0:Topic,0:CodeSnippet,0:ProgrammingSelector,0:ExpandableCollapsibleArea,1:CommunityContent,0:TopicNotInScope,0:FeedViewerBasic,0:ImageSprite,2:Header,2:HeaderFooterSprite,3:LinkList,4:PrintExportButton,1:Toc,1:NavigationResize,0:VersionSelector,1:LibraryMemberFilter,2:Footer,3:FooterSock,3:Base,5:Msdn;/Areas/Epx/Content/Css:0,/Areas/Library/Content:1,/Areas/Centers/Themes/StandardDevCenter/Content:2,/Areas/Epx/Themes/Base/Content:3,/Areas/Library/Themes/Base/Content:4,/Areas/Library/Themes/Msdn/Content:5" /></head>
+    <body class="library Chrome">
+        <div id="page">
+            
+            
+            
+            
+    
+
+    
+    <link type="text/css" rel="stylesheet" />
+    
+    <input type="hidden" id="isHeaderBleeding" value="true" />
+    <div id="ux-header" dir="ltr" class="ltr msdn">
+        
+
+        <header>
+            <div class="row">
+                <div class="top mobile"></div>
+                <div class="left">
+                    <div class="siteLogo">  
+                        
+                            <a class="msdnLogoImg" href="http://msdn.microsoft.com/en-us">
+                               <img src="http://i.msdn.microsoft.com/Areas/Centers/Themes/StandardDevCenter/Content/Images/microsoftLogoForHeader.png" />
+                            </a>
+                                                             
+                        <div data-fragmentName="SiteLogo" id="Fragment_SiteLogo" xmlns="http://www.w3.org/1999/xhtml">
+  <div class="LinkWithImage topImage">
+    <a id="SiteLogo_2152_1" href="http://msdn.microsoft.com">
+      <img id="msdnLogo-black" src="http://i.msdn.microsoft.com/en-us/msdn/ux/library/dn610975.msdnLogo-black.jpg?Segments=%2flibrary&amp;isLibrary=true&amp;isMtpsRequest=true&amp;HideProfileLink=true" xmlns="" />
+      <span></span>
+    </a>
+  </div>
+</div>    
+
+                    </div>
+                    <div id="grip"></div>
+                </div>
+                
+                <div class="right desktop">
+                    <div class="auxNav">
+                        <div id="signIn">
+
+<a class="scarabLink" href="https://login.live.com/login.srf?wa=wsignin1.0&amp;rpsnv=12&amp;ct=1415853915&amp;rver=6.0.5276.0&amp;wp=MCLBI&amp;wlcxt=MSDN%24MSDN%24MSDN&amp;wreply=http%3a%2f%2fmsdn.microsoft.com%2fen-us%2flibrary%2f43fzdd42%2528v%3dvs.110%2529.aspx%3fappId%3dDev12IDEF1%26l%3dEN-US%26k%3dk%2528CodeDomDesignerLoaderNoRootSerializer%2529%253bk%2528TargetFrameworkMoniker-.NETFramework%2cVersion%253dv4.5%2529%253bk%2528TargetFrameworkMoniker-.NETFramework%2cVersion%253dv4.5%2529%26rd%3dtrue&amp;lc=1033&amp;id=254354&amp;mkt=en-US" title="Sign in">Sign in</a></div>
+
+    
+
+                        <div data-fragmentName="Subscriptions" id="Fragment_Subscriptions" xmlns="http://www.w3.org/1999/xhtml">
+  <a href="https://msdn.microsoft.com/subscriptions/manage/hh442900" id="Subscriptions_2153_1" xmlns="http://www.w3.org/1999/xhtml">MSDN subscriptions</a>
+</div>   
+                        <div data-fragmentName="GetTools" id="Fragment_GetTools" xmlns="http://www.w3.org/1999/xhtml">
+  <a href="http://go.microsoft.com/fwlink/?LinkId=309297&amp;clcid=0x409&amp;slcid=0x409" id="GetTools_2153_3" xmlns="http://www.w3.org/1999/xhtml">Get tools</a>
+</div>
+                        <div data-fragmentName="SocialLinks" id="Fragment_SocialLinks" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="linkList">
+    <ul class="links horizontal">
+      <li>
+        <a href="http://www.facebook.com/microsoftdeveloper" target="_blank" id="SocialLinks_2152_4" class="facebook" xmlns="http://www.w3.org/1999/xhtml">http://www.facebook.com/microsoftdeveloper</a>
+      </li>
+      <li>
+        <a href="https://twitter.com/msdev" target="_blank" id="SocialLinks_2152_5" class="twitter" xmlns="http://www.w3.org/1999/xhtml">https://twitter.com/msdev</a>
+      </li>
+      <li>
+        <a href="http://plus.google.com/111221966647232053570/" target="_blank" id="SocialLinks_2152_6" class="googlePlus" xmlns="http://www.w3.org/1999/xhtml">http://plus.google.com/111221966647232053570/</a>
+      </li>
+    </ul>
+  </div>
+</div> 
+                    </div>
+                    <div data-fragmentName="SearchBox" id="Fragment_SearchBox" xmlns="http://www.w3.org/1999/xhtml">
+  <div class="SearchBox">
+    <form id="HeaderSearchForm" name="HeaderSearchForm" method="get" onsubmit="return Epx.Controls.SearchBox.searchBoxOnSubmit(this);">
+      <input id="HeaderSearchTextBox" name="query" type="text" maxlength="200" onfocus="Epx.Controls.SearchBox.watermarkFocus(event, this.title)" onblur="Epx.Controls.SearchBox.watermarkBlur(event, this.title)" />
+      <button id="HeaderSearchButton" value="" type="submit" class="header-search-button"></button>
+    </form>
+    
+    
+  </div>
+</div> 
+                </div>
+            </div>
+       
+             <div class="row" id="droor">
+                <div class="left toc">
+                            <nav>
+            <ul>
+                     <li class="inactive">
+
+                         <a href="http://msdn.microsoft.com/microsoft-platform-technologies-tools-msdn" title="Technologies">Technologies</a>
+                                 <div class="area">
+                                     <div class="arrow"></div>
+                                 </div>
+                                 <div class="subNav">
+                                     <ul>
+                                                 <li><a href="http://msdn.microsoft.com/cloud-app-development-msdn" title="Cloud">Cloud</a></li>
+                                                 <li><a href="http://msdn.microsoft.com/mobile-app-development-msdn" title="Mobile">Mobile</a></li>
+                                                 <li><a href="http://msdn.microsoft.com/web-app-development-msdn" title="Web">Web</a></li>
+                                                 <li><a href="http://msdn.microsoft.com/business-and-productivity-app-development-msdn" title="Business">Business</a></li>
+                                                 <li><a href="http://msdn.microsoft.com/big-data-development-msdn" title="Data">Data</a></li>
+                                                 <li><a href="http://msdn.microsoft.com/games-development-msdn" title="Gaming">Gaming</a></li>
+                                     </ul>
+                                 </div>
+
+                     </li>
+                     <li class="inactive">
+
+                         <a href="http://msdn.microsoft.com/developer-resource-downloads-msdn" title="Downloads">Downloads</a>
+                                 <div class="area">
+                                     <div class="arrow"></div>
+                                 </div>
+                                 <div class="subNav">
+                                     <ul>
+                                                 <li><a href="http://www.visualstudio.com/downloads/download-visual-studio-vs" title="Visual Studio">Visual Studio</a></li>
+                                                 <li><a href="http://msdn.microsoft.com/subscriptions/" title="MSDN subscriptions">MSDN subscriptions</a></li>
+                                                 <li><a href="http://msdn.microsoft.com/microsoft-sdks-msdn" title="SDKs">SDKs</a></li>
+                                     </ul>
+                                 </div>
+
+                     </li>
+                     <li class="inactive">
+
+                         <a href="http://msdn.microsoft.com/developer-programs" title="Programs">Programs</a>
+                                 <div class="area">
+                                     <div class="arrow"></div>
+                                 </div>
+                                 <div class="subNav">
+                                     <ul>
+                                                 <li><a href="http://www.microsoft.com/bizspark" title="BizSpark">BizSpark</a></li>
+                                                 <li><a href="http://msdn.microsoft.com/students-overview-msdn" title="Students">Students</a></li>
+                                                 <li><a href="http://msdn.microsoft.com/architects-overview-msdn" title="Architects">Architects</a></li>
+                                                 <li><a href="http://events.msdn.microsoft.com/en-us" title="Events">Events</a></li>
+                                     </ul>
+                                 </div>
+
+                     </li>
+                     <li class="inactive">
+
+                         <a href="http://msdn.microsoft.com/developer-communities-msdn" title="Community">Community</a>
+                                 <div class="area">
+                                     <div class="arrow"></div>
+                                 </div>
+                                 <div class="subNav">
+                                     <ul>
+                                                 <li><a href="https://social.msdn.microsoft.com/forums/" title="Forums">Forums</a></li>
+                                                 <li><a href="http://blogs.msdn.com/b/developer-tools/" title="Blogs">Blogs</a></li>
+                                                 <li><a href="http://tech-advisors.msdn.microsoft.com/en-us" title="Tech Advisors">Tech Advisors</a></li>
+                                                 <li><a href="http://channel9.msdn.com/" title="Channel 9">Channel 9</a></li>
+                                     </ul>
+                                 </div>
+
+                     </li>
+                     <li class="active current">
+
+                         <a href="http://msdn.microsoft.com/library/" title="Documentation">Documentation</a>
+
+                     </li>
+                     <li class="inactive">
+
+                         <a href="https://code.msdn.microsoft.com/" title="Samples">Samples</a>
+
+                     </li>
+            </ul>
+          
+        </nav>        
+
+                </div>
+                <div class="right mobile"></div>
+                
+                <span id="singleCol"></span>
+                <span id="doubleCol"></span>
+             </div>
+        </header>
+    </div>
+    
+    
+
+        
+    <div class="printExportMenus ltr">
+        <a id="isd_printABook" href="/en-us/library/export/help/?returnUrl=%2fen-us%2flibrary%2f43fzdd42(v%3dvs.110).aspx%3fappId%3dDev12IDEF1%26l%3dEN-US%26k%3dk(CodeDomDesignerLoaderNoRootSerializer)%253bk(TargetFrameworkMoniker-.NETFramework,Version%253dv4.5)%253bk(TargetFrameworkMoniker-.NETFramework,Version%253dv4.5)%26rd%3dtrue">
+            Export (<span class="count">0</span>)
+        </a>
+        <a id="isd_print" href="http://msdn.microsoft.com/en-us/library/43fzdd42(d=printer,v=vs.110).aspx?appId=Dev12IDEF1&amp;l=EN-US&amp;k=k(CodeDomDesignerLoaderNoRootSerializer)%3bk(TargetFrameworkMoniker-.NETFramework,Version%3dv4.5)%3bk(TargetFrameworkMoniker-.NETFramework,Version%3dv4.5)&amp;rd=true" rel="nofollow">
+            Print 
+        </a>
+    </div>
+    
+
+        <div class="printExportMenus ltr">
+        <a id="expandCollapseAll" accesskey="e" href="javascript:void(0)" title="Expand/Collapse all sections by pressing Ctrl + Shift + e">Expand All</a>
+    </div>
+
+    
+
+
+            <div id="body">
+                
+
+
+
+
+
+
+
+
+    <div id="leftNav">
+
+
+
+<div id="tocnav">
+
+            <div class="toclevel0" data-toclevel="0">
+<a data-tochassubtree="true" href="/en-us/library/ms123401.aspx" id="ms310241_MSDN.10_en-us" mtpsaliasid="" mtpsassetid="5DDC0A78-6B2C-43E3-9C56-55F45C0DFFA5_MSDN.10_en-us" mtpsshortid="ms123401_MSDN.10_en-us" title="MSDN Library">MSDN Library</a>            </div>
+            <div class="toclevel0" data-toclevel="0">
+<a data-tochassubtree="true" href="/en-us/library/ff361664(v=vs.110).aspx" id="aa139615_MSDN.10_en-us" mtpsaliasid="" mtpsassetid="43e22490-fb00-409c-8301-585a03034ae2_MSDN.10_en-us" mtpsshortid="ff361664_VS.110_en-us" title=".NET Development">.NET Development</a>            </div>
+            <div class="toclevel0" data-toclevel="0">
+<a data-tochassubtree="true" href="/en-us/library/w0x726c2(v=vs.110).aspx" id="aa139616_MSDN.10_en-us" mtpsaliasid="" mtpsassetid="f61f02f2-2f20-483d-8f56-a9c8f3a54986_MSDN.10_en-us" mtpsshortid="w0x726c2_VS.110_en-us" title=".NET Framework 4.5 and 4.6 Preview">.NET Framework 4.5 and 4.6 Preview</a>            </div>
+            <div class="toclevel0" data-toclevel="0">
+<a data-tochassubtree="true" href="/en-us/library/hh156542(v=vs.110).aspx" id="hh781599_VS.110_en-us" mtpsaliasid="" mtpsassetid="26e3d285-24c3-435c-a797-9fe5affb8525_VS.110_en-us" mtpsshortid="hh156542_VS.110_en-us" title="Development Guide">Development Guide</a>            </div>
+            <div class="toclevel0" data-toclevel="0">
+<a data-tochassubtree="true" href="/en-us/library/54xbah2z(v=vs.110).aspx" id="hh570241_VS.110_en-us" mtpsaliasid="" mtpsassetid="2dfb50b7-5af2-4e12-9bbb-c5ade0e39a68_VS.110_en-us" mtpsshortid="54xbah2z_VS.110_en-us" title="Client Applications">Client Applications</a>            </div>
+            <div class="toclevel0" data-toclevel="0">
+<a data-tochassubtree="true" href="/en-us/library/dd30h2yb(v=vs.110).aspx" id="hh570255_VS.110_en-us" mtpsaliasid="" mtpsassetid="627df1e9-b254-41af-bbac-9a4f02810c54_VS.110_en-us" mtpsshortid="dd30h2yb_VS.110_en-us" title="Windows Forms">Windows Forms</a>            </div>
+            <div class="toclevel0" data-toclevel="0">
+<a data-tochassubtree="true" href="/en-us/library/ms229608(v=vs.110).aspx" id="hh570279_VS.110_en-us" mtpsaliasid="" mtpsassetid="8398ee29-f860-4bbe-a915-d8df1c7d99ed_VS.110_en-us" mtpsshortid="ms229608_VS.110_en-us" title="Windows Forms Reference">Windows Forms Reference</a>            </div>
+            <div class="toclevel0" data-toclevel="0">
+<a data-tochassubtree="true" href="/en-us/library/0swx7xx8(v=vs.110).aspx" id="hh600386_VS.110_en-us" mtpsaliasid="" mtpsassetid="7b4b10b5-0852-42ba-9573-9fdcda93c3e6_VS.110_en-us" mtpsshortid="0swx7xx8_VS.110_en-us" title="Windows Forms Designer User Interface Elements">Windows Forms Designer User Interface Elements</a>            </div>
+            <div class="toclevel0" data-toclevel="0">
+<a data-tochassubtree="true" href="/en-us/library/e06hs424(v=vs.110).aspx" id="hh570238_VS.110_en-us" mtpsaliasid="" mtpsassetid="3c3d61f8-f36c-4d41-b9c3-398376fabb15_VS.110_en-us" mtpsshortid="e06hs424_VS.110_en-us" title="Windows Forms Designer">Windows Forms Designer</a>            </div>
+            <div class="toclevel1" data-toclevel="1">
+<a data-tochassubtree="true" href="/en-us/library/ms233640(v=vs.110).aspx" id="hh570239_VS.110_en-us" mtpsaliasid="" mtpsassetid="cf610bf4-5fe4-471c-bce7-6a05ece07bd2_VS.110_en-us" mtpsshortid="ms233640_VS.110_en-us" title="Windows Forms Designer Error Messages">Windows Forms Designer Error Messages</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/5e3fdf1f(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="'&lt;identifier name&gt;' is not a valid identifier">'&lt;identifier name&gt;' is not a valid identifier</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/4e52xcy6(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="'&lt;name&gt;' already exists in '&lt;project name&gt;'">'&lt;name&gt;' already exists in '&lt;project name&gt;'</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/h3e8bt7f(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="'&lt;Toolbox tab name&gt;' is not a toolbox category">'&lt;Toolbox tab name&gt;' is not a toolbox category</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/292x4xk2(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="A requested language parser is not installed">A requested language parser is not installed</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/4e0w1dc4(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="A service required for generating and parsing source code is missing">A service required for generating and parsing source code is missing</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/zt2sy279(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="An exception occurred while trying to create an instance of '&lt;object name&gt;'">An exception occurred while trying to create an instance of '&lt;object name&gt;'</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/fahh071t(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Another editor has '&lt;document name&gt;' open in an incompatible mode">Another editor has '&lt;document name&gt;' open in an incompatible mode</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/ks61yc7c(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Another editor has made changes to '&lt;document name&gt;'">Another editor has made changes to '&lt;document name&gt;'</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/cw121121(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Another editor has the file open in an incompatible mode">Another editor has the file open in an incompatible mode</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/0st0aaz7(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Array rank '&lt;rank in array&gt;' is too high">Array rank '&lt;rank in array&gt;' is too high</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/6y2eb8td(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Assembly '&lt;assembly name&gt;' could not be opened">Assembly '&lt;assembly name&gt;' could not be opened</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/t7yf0680(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Bad element type. This serializer expects an element of type '&lt;type name&gt;'.">Bad element type. This serializer expects an element of type '&lt;type name&gt;'.</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/3f4321zf(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Cannot access the Visual Studio Toolbox at this time">Cannot access the Visual Studio Toolbox at this time</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/hby97bhy(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Cannot bind an event handler to the '&lt;event name&gt;' event because it is read-only">Cannot bind an event handler to the '&lt;event name&gt;' event because it is read-only</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/2k4hz3we(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Cannot create a method name for the requested component because it is not a member of the design container">Cannot create a method name for the requested component because it is not a member of the design container</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/tyta2934(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Cannot name the object '&lt;name&gt;' because it is already named '&lt;name&gt;'">Cannot name the object '&lt;name&gt;' because it is already named '&lt;name&gt;'</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/626yby07(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Cannot remove or destroy inherited component '&lt;component name&gt;'">Cannot remove or destroy inherited component '&lt;component name&gt;'</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/20s4bece(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Category '&lt;Toolbox tab name&gt;' does not have a tool for class '&lt;class name&gt;'">Category '&lt;Toolbox tab name&gt;' does not have a tool for class '&lt;class name&gt;'</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/yhhs0hky(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Class '&lt;class name&gt;' has no matching constructor">Class '&lt;class name&gt;' has no matching constructor</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/fa9k3hsk(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Code generation for property '&lt;property name&gt;' failed">Code generation for property '&lt;property name&gt;' failed</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/ky8784ca(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Component '&lt;component name&gt;' did not call Container.Add() in its constructor">Component '&lt;component name&gt;' did not call Container.Add() in its constructor</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/eyd11k97(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Component name cannot be empty">Component name cannot be empty</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/0k73e855(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Could not access the variable '&lt;variable name&gt;' because it has not been initialized yet">Could not access the variable '&lt;variable name&gt;' because it has not been initialized yet</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/d62hcxw3(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Could not find type '&lt;type name&gt;'">Could not find type '&lt;type name&gt;'</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/7bw0ch66(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Could not load type '&lt;type name&gt;'">Could not load type '&lt;type name&gt;'</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/63sd19d7(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Could not locate the project item templates for inherited components">Could not locate the project item templates for inherited components</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/s4ee8st2(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Delegate class '&lt;class name&gt;' has no invoke method. Is this class a delegate?">Delegate class '&lt;class name&gt;' has no invoke method. Is this class a delegate?</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/y89cfw89(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Duplicate declaration of member '&lt;member name&gt;'">Duplicate declaration of member '&lt;member name&gt;'</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/ca1bd206(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Error reading resources from the resource file for the culture '&lt;culture name&gt;'">Error reading resources from the resource file for the culture '&lt;culture name&gt;'</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/36k58472(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Error reading resources from the resource file for the default culture '&lt;culture name&gt;'">Error reading resources from the resource file for the default culture '&lt;culture name&gt;'</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/46a2t3af(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Failed to parse method '&lt;method name&gt;'">Failed to parse method '&lt;method name&gt;'</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/48sz2hzy(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Invalid component name: '&lt;component name&gt;'">Invalid component name: '&lt;component name&gt;'</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/bb129230(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="The type '&lt;class name&gt;' is made of several partial classes in the same file">The type '&lt;class name&gt;' is made of several partial classes in the same file</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/3990wtd8(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="The assembly '&lt;assembly name&gt;' could not be found">The assembly '&lt;assembly name&gt;' could not be found</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/9yfk9sk2(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="The assembly name '&lt;assembly name&gt;' is invalid">The assembly name '&lt;assembly name&gt;' is invalid</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/d45af6y0(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="The base class '&lt;class name&gt;' cannot be designed">The base class '&lt;class name&gt;' cannot be designed</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/19dt6x0x(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="The base class '&lt;class name&gt;' could not be loaded">The base class '&lt;class name&gt;' could not be loaded</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/9t0z5b9t(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="The class '&lt;class name&gt;' cannot be designed in this version of Visual Studio">The class '&lt;class name&gt;' cannot be designed in this version of Visual Studio</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/7esd0b1z(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="The class name is not a valid identifier for this language">The class name is not a valid identifier for this language</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/dz66a27d(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="The component cannot be added because it contains a circular reference to '&lt;reference name&gt;'">The component cannot be added because it contains a circular reference to '&lt;reference name&gt;'</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/5kcbhat9(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="The designer cannot be modified at this time">The designer cannot be modified at this time</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/0t335zts(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="The designer could not be shown for this file because none of the classes within it can be designed">The designer could not be shown for this file because none of the classes within it can be designed</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/5w3edyz2(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="The designer for base class '&lt;class name&gt;' is not installed">The designer for base class '&lt;class name&gt;' is not installed</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/57bfe2c2(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="The designer inspected the following classes in the file:">The designer inspected the following classes in the file:</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/2xh82hxd(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="The designer must create an instance of type '&lt;type name&gt;', but it can't because the type is declared as abstract">The designer must create an instance of type '&lt;type name&gt;', but it can't because the type is declared as abstract</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/s9ts6we9(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="The file could not be loaded in the designer">The file could not be loaded in the designer</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/kzff6yak(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="The following exception has occurred:">The following exception has occurred:</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/7yaythz9(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="The language for this file does not support the necessary code parsing and generation services">The language for this file does not support the necessary code parsing and generation services</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/we4y29dd(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="The language parser class '&lt;class name&gt;' is not implemented properly">The language parser class '&lt;class name&gt;' is not implemented properly</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/x193f23w(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="The name '&lt;name&gt;' is already used by another object">The name '&lt;name&gt;' is already used by another object</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/zchd9dxa(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="The object '&lt;object name&gt;' does not implement the IComponent interface">The object '&lt;object name&gt;' does not implement the IComponent interface</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/wa5h4se0(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="The object '&lt;object name&gt;' returned null for the property '&lt;property name&gt;' but this is not allowed">The object '&lt;object name&gt;' returned null for the property '&lt;property name&gt;' but this is not allowed</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/59a9z6h5(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="The serialization data object is not of the proper type">The serialization data object is not of the proper type</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/ks7ych18(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="The service '&lt;service name&gt;' is required, but could not be located">The service '&lt;service name&gt;' is required, but could not be located</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/00f1x82h(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="The service instance must derive from or implement '&lt;interface name&gt;'">The service instance must derive from or implement '&lt;interface name&gt;'</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/8wtdd9as(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="The text in the code window could not be modified">The text in the code window could not be modified</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/129y6c6c(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="The Toolbox enumerator object only supports retrieving one item at a time">The Toolbox enumerator object only supports retrieving one item at a time</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/b7fkh29k(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="The Toolbox item for '&lt;component name&gt;' could not be retrieved from the Toolbox">The Toolbox item for '&lt;component name&gt;' could not be retrieved from the Toolbox</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/9x97wh1a(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="The Toolbox item for '&lt;Toolbox item name&gt;' could not be retrieved from the Toolbox">The Toolbox item for '&lt;Toolbox item name&gt;' could not be retrieved from the Toolbox</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/x74k2cs9(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="The type '&lt;type name&gt;' could not be found">The type '&lt;type name&gt;' could not be found</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/y0bxxh9c(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="The type '&lt;type name&gt;' has no event named '&lt;event name&gt;'">The type '&lt;type name&gt;' has no event named '&lt;event name&gt;'</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/dty17z1k(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="The type '&lt;type name&gt;' has no field named '&lt;field name&gt;'">The type '&lt;type name&gt;' has no field named '&lt;field name&gt;'</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/tkxkyzsd(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="The type '&lt;type name&gt;' has no property named '&lt;property name&gt;'">The type '&lt;type name&gt;' has no property named '&lt;property name&gt;'</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/syzhszfw(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="The type resolution service may only be called from the main application thread">The type resolution service may only be called from the main application thread</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/4008y84t(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="The variable '&lt;variable name&gt;' is either undeclared or was never assigned">The variable '&lt;variable name&gt;' is either undeclared or was never assigned</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/032hdke9(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="There is already a command handler for the menu command '&lt;menu command name&gt;'">There is already a command handler for the menu command '&lt;menu command name&gt;'</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/tewy5d93(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="There is already a component named '&lt;component name&gt;'">There is already a component named '&lt;component name&gt;'</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/9txb2sy0(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="There is already a Toolbox item creator registered for the format '&lt;format name&gt;'">There is already a Toolbox item creator registered for the format '&lt;format name&gt;'</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/c6hcsx5h(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="This language engine does not support a CodeModel with which to load a designer">This language engine does not support a CodeModel with which to load a designer</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/t2eyxk2f(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Type '&lt;type name&gt;' does not have a constructor with parameters of types '&lt;parameter type names&gt;'">Type '&lt;type name&gt;' does not have a constructor with parameters of types '&lt;parameter type names&gt;'</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/z56d7139(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Unable to add reference '&lt;reference name&gt;' to the current application">Unable to add reference '&lt;reference name&gt;' to the current application</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/t3ec2ktk(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Unable to check out the current file">Unable to check out the current file</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/fc8t8ty0(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Unable to find page named '&lt;Options dialog box tab name&gt;'">Unable to find page named '&lt;Options dialog box tab name&gt;'</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/4f8dxshx(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Unable to find property '&lt;property name&gt;' on page '&lt;Options dialog box tab name&gt;'">Unable to find property '&lt;property name&gt;' on page '&lt;Options dialog box tab name&gt;'</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/s1z1b64h(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Unable to load assembly '&lt;assembly name&gt;'">Unable to load assembly '&lt;assembly name&gt;'</a>            </div>
+            <div class="toclevel2 current" data-toclevel="2">
+<a href="/en-us/library/43fzdd42(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Visual Studio cannot open a designer for the file because the class within it does not inherit from a class that can be visually designed">Visual Studio cannot open a designer for the file because the class within it does not inherit from a class that can be visually designed</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/x8wcxf37(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Visual Studio cannot save or load instances of the type '&lt;type name&gt;'">Visual Studio cannot save or load instances of the type '&lt;type name&gt;'</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/0z9cey35(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Visual Studio is unable to open '&lt;document name&gt;' in Design view">Visual Studio is unable to open '&lt;document name&gt;' in Design view</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="/en-us/library/56hcfxxa(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Visual Studio was unable to find a designer for classes of type '&lt;type name&gt;'">Visual Studio was unable to find a designer for classes of type '&lt;type name&gt;'</a>            </div>
+</div>
+        
+
+        
+
+        
+        
+        <div id="toc-resizable-ew" class="toc-resizable-ew"></div>
+        
+
+<a id="NavigationResize" href="javascript:void(0)">
+    <img class="cl_nav_resize_open" src="http://i3.msdn.microsoft.com/Areas/Epx/Content/Images/ImageSprite.png" title="Expand" alt="Expand" />
+    <img class="cl_nav_resize_close" src="http://i3.msdn.microsoft.com/Areas/Epx/Content/Images/ImageSprite.png" title="Minimize" alt="Minimize" />
+</a>
+
+
+
+    </div>
+<div id="content" class="content">
+
+
+
+
+
+    
+    <div id="FeedbackCounterUrl" data-url="/en-us/library/feedbackcounterasync/43fzdd42(v=vs.110).aspx"></div>
+    <div id="FeedbackCounterPlaceHolder"></div>
+
+
+        
+<div xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="topic" xmlns="http://www.w3.org/1999/xhtml" xmlns:mtps="http://msdn2.microsoft.com/mtps" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:cs="http://msdn.microsoft.com/en-us/">
+    <h1 class="title">Visual Studio cannot open a designer for the file because the class within it does not inherit from a class that can be visually designed</h1>
+    
+    <div class="lw_vs">
+      <div id="curversion">
+        <strong>
+            .NET Framework 4.5
+        </strong>
+      </div>
+      <div id="versionclick">
+        <div id="vsseperator" class="cl_lw_vs_seperator"></div>
+        <div>
+          <div>
+            <a id="vsLink" href="javascript:;">
+                        Other Versions
+                    </a>
+          </div>
+          <div class="cl_vs_arrow clip10x10">
+            <img class="cl_lw_vs_arrow" id="vsArrow" alt="" src="http://i3.msdn.microsoft.com/Areas/Epx/Content/Images/ImageSprite.png" />
+          </div>
+        </div>
+        <ul id="vsPanel">
+          <li>
+            <a href="/en-us/library/43fzdd42(v=vs.100).aspx">Visual Studio 2010</a>
+          </li>
+          <li>
+            <a href="/en-us/library/43fzdd42(v=vs.90).aspx">.NET Framework 3.5</a>
+          </li>
+          <li>
+            <a href="/en-us/library/43fzdd42(v=vs.80).aspx">.NET Framework 2.0</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div style="clear:both;"></div>
+    
+    <div id="mainSection">
+      <div id="mainBody">
+        <p>
+          
+        </p>
+        <div class="introduction">
+          <p>Visual Studio loaded the class, but the designer for that class could not be loaded.</p>
+          <p>The class can be designed, but it is not the first class in the file. Visual Studio requires that designers use the first class in the file.</p>
+        </div>
+        <h3 class="procedureSubHeading">To correct this error</h3>
+        <div class="subSection">
+          <ul>
+            <li>
+              <p>Move the class code so that it is the first class in the file, and then load the designer again.</p>
+            </li>
+          </ul>
+        </div>
+        <div>
+          
+          <h2 class="LW_CollapsibleArea_TitleDiv">
+            <div>
+              <a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse" role="button">
+                <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span>
+                <span class="LW_CollapsibleArea_Title">See Also</span>
+              </a>
+              <div class="LW_CollapsibleArea_HrDiv">
+                <hr class="LW_CollapsibleArea_Hr" />
+              </div>
+            </div>
+          </h2>
+          <div class="sectionblock">
+            <a id="seeAlsoToggle">
+              
+            </a>
+            <h4 class="subHeading">Concepts</h4>
+            <div class="seeAlsoStyle">
+              <span>
+                <a href="http://msdn.microsoft.com/en-us/library/b8akas30(v=vs.110).aspx">Getting Help from Microsoft Support (Visual Studio)</a>
+              </span>
+            </div>
+            <h4 class="subHeading">Other Resources</h4>
+            <div class="seeAlsoStyle">
+              <span>
+                <a href="http://msdn.microsoft.com/en-us/library/e2h7fzkw(v=vs.110).aspx">Installing Visual Studio</a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+
+
+
+<div class="libraryMemberFilter">
+    <div class="filterContainer">
+        <span>Show:</span>
+        <label>
+            <input type="checkbox" class="libraryFilterInherited" checked="checked" value="Inherit" />Inherited
+        </label>
+        <label>
+            <input type="checkbox" class="libraryFilterProtected" checked="checked" value="Protected" />Protected
+        </label>
+    </div>
+</div>
+    
+<input type="hidden" id="libraryMemberFilterEmptyWarning" value="There are no members available with your current filter settings." />
+
+
+ 
+</div>
+
+
+            </div>
+            <div class="clear"></div>
+
+            
+    
+<input name="__RequestVerificationToken" type="hidden" value="BnSf09LRbhzE6kp-GsAqek3CKT2gqD_n7iB6JnplM2-YxqY0SbaRgEoOFxyLV40Udna4h2bo2Qwh2Q9Q362DIGADUCY1" />
+<input id="ratingSubmitUrl" type="hidden" value="http://msdn.microsoft.com/en-us/library/feedback/add/43fzdd42(v=vs.110).aspx" />
+<input id="isTopicRated" type="hidden" value="false" />
+
+
+
+
+    
+
+    
+    <link type="text/css" rel="stylesheet" />
+    
+    <div id="ux-footer" class="" style="" dir="ltr">
+            
+            <div id="footerSock" class="librarySock both">
+                <div id="footerSockInner">
+                        <a name="feedback"></a>
+
+<div class="rating">
+    <div id="ratingSection1">
+        <div class="title">
+            Was this page helpful?
+        </div>
+        <div class="description">
+            Your feedback about this content is important.<br />Let us know what you think.
+        </div>
+        <div class="buttons">
+            <button class="button" id="ratingYes">Yes</button>
+            <button class="button" id="ratingNo">No</button>
+        </div>
+        <input id="ratingValue" type="hidden" value="" />
+    </div>
+    <div id="ratingSection2">
+        <div class="title">
+            Additional feedback?
+        </div>
+        <textarea id="ratingText" rows="6" cols="" maxlength="1500"></textarea>
+        <div class="counter right">
+            <span id="feedbackTextCounter">1500</span> characters remaining
+        </div>
+        <div class="buttons left">
+            <button class="button" id="ratingSubmit">Submit</button>
+            <button class="button" id="ratingSkipThis">Skip this</button>
+        </div>
+    </div>
+    <div id="ratingSection3">
+        <div class="title">
+            Thank you!
+        </div>
+        <div class="description">
+            We appreciate your feedback.
+        </div>
+    </div>
+    
+    
+    <div id="contentFeedbackQAContainer" style="display: none;"></div>
+</div>
+    
+                    <div class="userVoice">
+    <div class="title">
+        Have a suggestion to improve MSDN Library?
+    </div>
+        <div class="description">
+            Visit our UserVoice Page to submit and vote on ideas!
+        </div>
+    <div class="buttons">
+        <a class="button" id="userVoiceButton" href="http://feedback.msdn.com/forums/257782-msdn-feature-suggestions/category/83975" target="_blank">Make a suggestion</a>
+    </div>
+</div>  
+                    <div class="clear"></div>
+                </div>
+            </div>
+
+        <footer class="top">
+            <div data-fragmentName="LeftLinks" id="Fragment_LeftLinks" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="linkList">
+    <div class="linkListTitle">Dev centers</div>
+    <ul class="links">
+      <li>
+        <a href="http://dev.windows.com" id="LeftLinks_2148_1" class="windowsBlue" xmlns="http://www.w3.org/1999/xhtml">Windows</a>
+      </li>
+      <li>
+        <a href="http://dev.office.com" id="LeftLinks_2148_3" class="office" xmlns="http://www.w3.org/1999/xhtml">Office</a>
+      </li>
+      <li>
+        <a href="http://msdn.microsoft.com/vstudio" id="LeftLinks_2148_4" class="visualStudio" xmlns="http://www.w3.org/1999/xhtml">Visual Studio</a>
+      </li>
+      <li>
+        <a href="http://developer.nokia.com/" title="Nokia" id="LeftLinks_2148_15" class="nokia" xmlns="http://www.w3.org/1999/xhtml">Nokia</a>
+      </li>
+      <li>
+        <a href="http://azure.microsoft.com/en-us/documentation/" target="_blank" id="LeftLinks_2148_12" xmlns="http://www.w3.org/1999/xhtml">Microsoft Azure</a>
+      </li>
+      <li>
+        <a href="http://msdn.microsoft.com/aa937802" id="LeftLinks_2148_5" xmlns="http://www.w3.org/1999/xhtml">More...</a>
+      </li>
+    </ul>
+  </div>
+</div>    
+            <div id="rightLinks">
+                <div data-fragmentName="CenterLinks1" id="Fragment_CenterLinks1" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="linkList">
+    <div class="linkListTitle">Learning resources</div>
+    <ul class="links">
+      <li>
+        <a href="http://www.microsoftvirtualacademy.com/" id="CenterLinks1_2151_4" xmlns="http://www.w3.org/1999/xhtml">Microsoft Virtual Academy</a>
+      </li>
+      <li>
+        <a href="http://channel9.msdn.com/" id="CenterLinks1_2151_5" xmlns="http://www.w3.org/1999/xhtml">Channel 9</a>
+      </li>
+      <li>
+        <a href="http://www.interoperabilitybridges.com/" id="CenterLinks1_2151_6" xmlns="http://www.w3.org/1999/xhtml">Interoperability Bridges</a>
+      </li>
+      <li>
+        <a href="http://msdn.microsoft.com/magazine/" id="CenterLinks1_2151_7" xmlns="http://www.w3.org/1999/xhtml">MSDN Magazine</a>
+      </li>
+    </ul>
+  </div>
+</div>
+                <div data-fragmentName="CenterLinks2" id="Fragment_CenterLinks2" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="linkList">
+    <div class="linkListTitle">Community</div>
+    <ul class="links">
+      <li>
+        <a href="https://social.msdn.microsoft.com/forums/en-us/home" id="CenterLinks2_2151_8" xmlns="http://www.w3.org/1999/xhtml">Forums</a>
+      </li>
+      <li>
+        <a href="http://blogs.msdn.com/b/developer-tools/" id="CenterLinks2_2151_9" xmlns="http://www.w3.org/1999/xhtml">Blogs</a>
+      </li>
+      <li>
+        <a href="http://www.codeplex.com" id="CenterLinks2_2151_10" xmlns="http://www.w3.org/1999/xhtml">Codeplex</a>
+      </li>
+    </ul>
+  </div>
+</div>
+                <div data-fragmentName="CenterLinks3" id="Fragment_CenterLinks3" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="linkList">
+    <div class="linkListTitle">Support</div>
+    <ul class="links">
+      <li>
+        <a href="http://msdn.microsoft.com/hh361695" id="CenterLinks3_2151_11" xmlns="http://www.w3.org/1999/xhtml">Self support</a>
+      </li>
+    </ul>
+  </div>
+</div>
+                <div data-fragmentName="CenterLinks4" id="Fragment_CenterLinks4" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="linkList">
+    <div class="linkListTitle">Programs</div>
+    <ul class="links">
+      <li>
+        <a href="http://www.microsoft.com/bizspark/" id="CenterLinks4_2151_13" xmlns="http://www.w3.org/1999/xhtml">BizSpark (for startups)</a>
+      </li>
+      <li>
+        <a href="https://www.dreamspark.com/" id="CenterLinks4_2151_14" xmlns="http://www.w3.org/1999/xhtml">DreamSpark</a>
+      </li>
+      <li>
+        <a href="http://www.imaginecup.com" id="CenterLinks4_2151_17" xmlns="http://www.w3.org/1999/xhtml">Imagine Cup</a>
+      </li>
+    </ul>
+  </div>
+</div>                
+            </div>
+        </footer>
+    
+        <footer class="bottom">
+            <span class="localeContainer">
+                
+    <form class="selectLocale" id="selectLocaleForm" action="http://msdn.microsoft.com/en-us/selectlocale-dmc">
+        <input type="hidden" name="fromPage" value="http%3a%2f%2fmsdn.microsoft.com%2fen-us%2flibrary%2f43fzdd42(v%3dvs.110).aspx%3fappId%3dDev12IDEF1%26l%3dEN-US%26k%3dk(CodeDomDesignerLoaderNoRootSerializer)%253bk(TargetFrameworkMoniker-.NETFramework%2cVersion%253dv4.5)%253bk(TargetFrameworkMoniker-.NETFramework%2cVersion%253dv4.5)%26rd%3dtrue" />
+        <a href="#" onclick="$('#selectLocaleForm').submit();return false;" title="Change your language">United States (English)</a>
+    </form>
+
+
+            </span>
+        
+            <div data-fragmentName="BottomLinks" id="Fragment_BottomLinks" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="linkList">
+    <ul class="links horizontal">
+      <li>
+        <a href="http://msdn.microsoft.com/newsletter.aspx" id="BottomLinks_2148_7" xmlns="http://www.w3.org/1999/xhtml">Newsletter</a>
+      </li>
+      <li>
+        <a href="http://msdn.microsoft.com/dn529288" id="BottomLinks_2148_8" xmlns="http://www.w3.org/1999/xhtml">Privacy &amp; cookies</a>
+      </li>
+      <li>
+        <a href="http://msdn.microsoft.com/cc300389" id="BottomLinks_2148_9" xmlns="http://www.w3.org/1999/xhtml">Terms of use</a>
+      </li>
+      <li>
+        <a href="http://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" id="BottomLinks_2148_10" xmlns="http://www.w3.org/1999/xhtml">Trademarks</a>
+      </li>
+    </ul>
+  </div>
+</div>    
+            <span class="logoLegal">
+                <span class="logo"></span>
+                <span class="copyright">© 2014 Microsoft</span>
+            </span>
+        </footer>
+    </div>
+    
+
+
+            <div class="footerPrintView">
+                <div class="footerCopyrightPrintView">© 2014 Microsoft</div>
+            </div>
+
+            
+            
+    
+    
+    <input id="tocPaddingPerLevel" type="hidden" value="17" />
+
+
+
+            <input id="MtpsDevice" type="hidden" value="Default" />
+
+
+<![CDATA[ Third party scripts and code linked to or referenced from this website are licensed to you by the parties that own such code, not by Microsoft.  See ASP.NET Ajax CDN Terms of Use – http://www.asp.net/ajaxlibrary/CDN.ashx. ]]>
+
+            
+            
+            
+            
+            
+
+
+
+
+
+
+
+<noscript><div><img alt="DCSIMG" id="Img1" width="1" height="1" src="http://m.webtrends.com/dcsmgru7m99k7mqmgrhudo0k8_8c6m/njs.gif?dcsuri=/nojavascript&amp;WT.js=No" /></div></noscript>
+
+
+
+
+
+
+
+
+
+<noscript>
+  <a href="http://www.omniture.com" title="Web Analytics">
+    <img src="//msstonojsmsdn.112.2o7.net/b/ss/msstonojsmsdn/1/H.20.2--NS/0" height="1" width="1" border="0" alt="" />
+  </a>
+</noscript>
+
+
+
+
+<div id="globalRequestVerification">
+    <input name="__RequestVerificationToken" type="hidden" value="pgcKmj-wt3CgYp9Yt1yFeNjYqRuCzc4KGbJRxsFrG77uN7OuhzV6sjPfbenbwUcj_qCbC0deCheuVqHBdQ2qVOEnX301" />
+</div>
+
+
+        </div>
+
+        
+        
+        
+        
+    <script type="text/javascript" class="mtps-injected">
+/*<![CDATA[*/
+(function(window,document){"use strict";function preload(scripts){for(var result=[],script,e,i=0;i<scripts.length;i++)script=scripts[i],script.hasOwnProperty("url")&&(e=document.createElement("script"),e.src=script.url,script.throwaway=e),result.push(script);return result}function inject(scripts,index){var script,elem;if(index>=scripts.length){delete mtps.injectScripts;return}script=scripts[index];elem=document.createElement("script");elem.className="mtps-injected";elem.async=!1;var isLoaded=!1,timeoutId=0,injectNextFnName="",injectNext=elem.onerror=function(){isLoaded||(isLoaded=!0,inject(scripts,index+1),window.clearTimeout(timeoutId),elem.onload=elem.onerror=elem.onreadystatechange=null,injectNextFnName&&delete mtps[injectNextFnName],elem.removeEventListener&&elem.removeEventListener("load",injectNext,!1))};elem.addEventListener?elem.addEventListener("load",injectNext,!1):elem.readyState==="uninitialized"?elem.onreadystatechange=function(){(this.readyState==="loaded"||this.readyState==="complete")&&injectNext()}:elem.onload=injectNext;script.hasOwnProperty("url")?(timeoutId=window.setTimeout(injectNext,12e4),elem.src=script.url):(injectNextFnName="_injectNextScript_"+index,mtps[injectNextFnName]=injectNext,timeoutId=window.setTimeout(injectNext,2e3),elem.text="try {\n"+script.txt+"\n} finally { MTPS."+injectNextFnName+" && MTPS."+injectNextFnName+"(); }");parent.appendChild(elem)}var mtps=window.MTPS||(window.MTPS={}),parent=document.getElementsByTagName("head")[0];mtps.injectScripts=function(scripts){inject(preload(scripts),0)}})(window,document);
+MTPS.injectScripts([
+	{ txt: "/**/\r\n(window.MTPS || (window.MTPS = {})).cdnDomains || (window.MTPS.cdnDomains = { \r\n\t\"image\": \"http://i.msdn.microsoft.com\", \r\n\t\"js\": \"http://i2.msdn.microsoft.com\", \r\n\t\"css\": \"http://i3.msdn.microsoft.com\", \r\n\t\"xap\": \"http://msdn.microsoft.com\"\r\n});\r\n/**/" },
+	{ url: "http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js" },
+	{ txt: "//\n  var literalNormalizedUrl = \u0027/en-us/library/43fzdd42(l=en-us,v=vs.110).aspx\u0027;\n  var wt_nvr_ru = \u0027WT_NVR_RU\u0027;\n  var wt_fpcdom = \u0027.microsoft.com\u0027;\n  var wt_domlist = \u0027msdn.microsoft.com\u0027;\n  var wt_pathlist = \u0027\u0027;\n  var wt_paramlist = \u0027DCSext.mtps_devcenter\u0027;\n  var wt_siteid = \u0027MSDN\u0027;\n  var gDomain = \u0027m.webtrends.com\u0027;\n  var gDcsId = \u0027dcsmgru7m99k7mqmgrhudo0k8_8c6m\u0027;\n  var gFpc = \u0027WT_FPC\u0027;\n\n\n\n  if (document.cookie.indexOf(gFpc + \"=\") == -1) {\n    var wtidJs = document.createElement(\"script\");\n    wtidJs.src = \"//\" + gDomain + \"/\" + gDcsId + \"/wtid.js\";\n    document.getElementsByTagName(\"head\")[0].appendChild(wtidJs);\n  }\n\n\n\n  var detectedLocale = \u0027en-us\u0027;\n  var wtsp = \u0027msdnlib_dotnet\u0027;\n  var gTrackEvents = \u00270\u0027;\n/**/" },
+	{ txt: "/**/\n  var omni_guid = \"2f8dce90-5a2a-44a0-a25a-0024264f8414\";\n/**/" },
+	{ txt: "//\n\n            window.appInsightsId = \u002760854590-027a-4ae4-98be-2741a40f355f\u0027;\n            //" },
+	{ url: "http://i2.msdn.microsoft.com/Combined.js?resources=0:Utilities,1:Layout,2:Header,3:FeedbackCounterAsync,1:Rating,2:Footer,0:Topic,4:webtrendsscript,5:omni_rsid_MSDN,0:AppInsightsPerf,6:Toc,1:SearchBox;/Areas/Epx/Content/Scripts:0,/Areas/Epx/Themes/Base/Content:1,/Areas/Centers/Themes/StandardDevCenter/Content:2,/Areas/Epx/Shared/Content:3,/Areas/Global/Content/Webtrends/resources:4,/Areas/Global/Content/Omniture/resources/MSDN:5,/Areas/Library/Content:6\u0026amp;hashKey=E51EE2CB09B3D21FAA182257289298FF" },
+	{ url: "http://i1.services.social.microsoft.com/search/Widgets/SearchBox.jss?boxid=HeaderSearchTextBox\u0026btnid=HeaderSearchButton\u0026brand=Msdn\u0026loc=en-us\u0026focusOnInit=false\u0026emptyWatermark=true\u0026searchButtonTooltip=Search MSDN" },
+	{ url: "http://i2.msdn.microsoft.com/Combined.js?resources=0:PrintExportButton,1:NavigationResize;/Areas/Library/Themes/Base/Content:0,/Areas/Library/Content:1\u0026amp;hashKey=72684789A0F98A77C33C1AC3470E9ECF" },
+	{ txt: "MTPS = window.MTPS || {}; MTPS.LocalizedStrings = window.MTPS.LocalizedStrings || {}; MTPS.LocalizedStrings.ExpandButtonTooltip = \u0027Expand\u0027; MTPS.LocalizedStrings.CollapseButtonTooltip = \u0027Collapse\u0027; MTPS.LocalizedStrings.EnhancedExpandTooltip = \u0027Click to expand. Double-click to expand all.\u0027; MTPS.LocalizedStrings.EnhancedCollapseTooltip = \u0027Click to collapse. Double-click to collapse all.\u0027; MTPS.LocalizedStrings.ExpandAllButtonTooltip = \u0027Expand All\u0027; MTPS.LocalizedStrings.CollapseAllButtonTooltip = \u0027Collapse All\u0027;" },
+	{ url: "http://i2.msdn.microsoft.com/Combined.js?resources=0:LibraryMemberFilter,1:Toc_Fixed,1:CodeSnippet,1:TopicNotInScope,1:CollapsibleArea,1:VersionSelector,1:SurveyBroker;/Areas/Library/Content:0,/Areas/Epx/Content/Scripts:1\u0026amp;hashKey=BA0D41FD888DE12A388DAF9CAC70144D" },
+	{ txt: "$(document).ready(function() {\n        try {\n            var token = $(\"#globalRequestVerification input[name=\u0027__RequestVerificationToken\u0027]\").clone();\n            $(\"#siteFeedbackForm\").append(token);\n        } catch(err) {\n            \n        }\n    });" }
+]);
+
+/*]]>*/
+</script></body>
+</html>
