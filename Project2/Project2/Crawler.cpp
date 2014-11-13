@@ -45,8 +45,10 @@ void Crawler::browse(Label^ pathResult)
 	openFileDialog1->FilterIndex = 1;
 	openFileDialog1->RestoreDirectory = true;
 
-	if (openFileDialog1->ShowDialog() == System::Windows::Forms::DialogResult::OK) //Make sure the selection is successful
+	if (openFileDialog1->ShowDialog() == System::Windows::Forms::DialogResult::OK) //Make sure 
+		//the selection is successful
 	{
-		pathResult->Text = openFileDialog1->FileName->ToString(); //Set the label below the browsing button to the path of the selected file
+		pathResult->Text = openFileDialog1->FileName->ToString(); //Set the label below 
+						//the browsing button to the path of the selected file
 	}
 }

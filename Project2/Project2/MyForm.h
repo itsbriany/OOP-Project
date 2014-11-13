@@ -151,7 +151,6 @@ namespace Project2 {
 			this->finalResult->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
 			this->finalResult->Size = System::Drawing::Size(616, 265);
 			this->finalResult->TabIndex = 0;
-			this->finalResult->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox2_TextChanged);
 			// 
 			// tabControl1
 			// 
@@ -184,7 +183,6 @@ namespace Project2 {
 			this->tabPage3->TabIndex = 2;
 			this->tabPage3->Text = L"Parse";
 			this->tabPage3->UseVisualStyleBackColor = true;
-			this->tabPage3->Click += gcnew System::EventHandler(this, &MyForm::tabPage3_Click);
 			// 
 			// tagResult
 			// 
@@ -229,7 +227,6 @@ namespace Project2 {
 			this->label5->Size = System::Drawing::Size(121, 17);
 			this->label5->TabIndex = 6;
 			this->label5->Text = L"Select tags to filer";
-			this->label5->Click += gcnew System::EventHandler(this, &MyForm::label5_Click);
 			// 
 			// anchorTagButton
 			// 
@@ -275,7 +272,6 @@ namespace Project2 {
 			this->selectFileLabel->Size = System::Drawing::Size(97, 17);
 			this->selectFileLabel->TabIndex = 2;
 			this->selectFileLabel->Text = L"Selected File: ";
-			this->selectFileLabel->Click += gcnew System::EventHandler(this, &MyForm::label4_Click);
 			// 
 			// label3
 			// 
@@ -285,7 +281,6 @@ namespace Project2 {
 			this->label3->Size = System::Drawing::Size(137, 17);
 			this->label3->TabIndex = 1;
 			this->label3->Text = L"Select a file to parse";
-			this->label3->Click += gcnew System::EventHandler(this, &MyForm::label3_Click);
 			// 
 			// browseFileButton
 			// 
@@ -322,51 +317,29 @@ namespace Project2 {
 
 #pragma endregion
 
-private: System::Void label1_Click(System::Object^  sender, System::EventArgs^  e) {//label for search tab
-}
-
-private: System::Void textBox1_TextChanged(System::Object^  sender, System::EventArgs^  e) {//textbox for search tab
-}
-//c&p this for other future tabs
-private: System::Void textBox2_TextChanged(System::Object^  sender, System::EventArgs^  e) {//textbox for images tab
-	
-}
-private: System::Void label2_Click(System::Object^  sender, System::EventArgs^  e) {
-}
-private: System::Void tabPage3_Click(System::Object^  sender, System::EventArgs^  e)
-{
-}
 private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e)
 {
-	browse(pathResult);
-}
-private: System::Void label3_Click(System::Object^  sender, System::EventArgs^  e)
-{
-}
-private: System::Void label4_Click(System::Object^  sender, System::EventArgs^  e)
-{
-}
-private: System::Void label5_Click(System::Object^  sender, System::EventArgs^  e)
-{
+	browse(pathResult); //Browse directory for a file to input
 }
 private: System::Void readFileButton_Click(System::Object^  sender, System::EventArgs^  e)
 {
-	readFile(pathResult, finalResult, tabControl1);
+	readFile(pathResult, finalResult, tabControl1); //Read the inputed file and output it
 }
 
 private: System::Void anchorTagButton_Click(System::Object^  sender, System::EventArgs^  e)
 {
 	tagResult->Text = "anchor";
-	parser.setTag("a");
+	parser.setTag("a"); //Set the parser's tag
 }
 private: System::Void imageTagButton_Click(System::Object^  sender, System::EventArgs^  e)
 {
 	tagResult->Text = "image";
-	parser.setTag("img");
+	parser.setTag("img"); //Set the parser's tag
 }
 private: System::Void parseButton_Click(System::Object^  sender, System::EventArgs^  e)
 {
-	parser.parse(pathResult->Text, finalResult, tabControl1);
+	parser.parse(pathResult->Text, finalResult, tabControl1); //Parse the input according the
+															  //parsing tag
 }
 };
 }

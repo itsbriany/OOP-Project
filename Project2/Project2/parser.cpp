@@ -68,7 +68,8 @@ void Parse::Parser::parseLink(String^ line, TextBox^ finalResult, TabControl^ ta
 	String^ remaining_line = ""; //After one tag is found, will use this to keep searching line for more tags until empty
 
 	int start = line->IndexOf("<a"); //Find anchor tags position, -1 if not found
-	int end = line->IndexOf("</a>") + 4; //Gives position of first character of ending tag. Add 4 to shift position to point to the end of the tag
+	int end = line->IndexOf("</a>") + 4; //Gives position of first character of ending tag. Add 4 to shift position to point to the 
+										//end of the tag
 	int num_chars = end - start; //This is how many characters from start to include in substring
 
 
@@ -81,7 +82,10 @@ void Parse::Parser::parseLink(String^ line, TextBox^ finalResult, TabControl^ ta
 		finalResult->Text += tag + Environment::NewLine; //Print tag to the output file
 		tabControl1->SelectTab(1); //Switch to the results tab
 	}
-	if(remaining_line->Length > 0) //Recursive call, repeat above process with the remaining line after all text up to ending tag of first anchor is removed. If no anchors found, remaining_line will be empty
+	if(remaining_line->Length > 0) //Recursive call, repeat above process with 
+								//the remaining line after all text up to ending 
+								//tag of first anchor is removed. If no anchors found, 
+								//remaining_line will be empty
 		parseLink(remaining_line, finalResult, tabControl1);
 
 
