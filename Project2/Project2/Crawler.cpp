@@ -40,7 +40,7 @@ void Crawler::readFile(Label^ pathResult, TextBox^ finalResult, TabControl^ tabC
 void Crawler::browse(Label^ pathResult)
 {
 	OpenFileDialog^ openFileDialog1 = gcnew OpenFileDialog; //Open up directory broswer
-	openFileDialog1->InitialDirectory = "D:\\Documents\\GitHub\\OOP\\Project2"; //Choose directory
+	openFileDialog1->InitialDirectory = "C:\\"; //Choose directory
 	openFileDialog1->Filter = "txt files (*.txt)|*.txt|html files (*.html)|*.html|php files (*.php)|*.php"; //Make the list of available file types to choose from
 	openFileDialog1->FilterIndex = 1;
 	openFileDialog1->RestoreDirectory = true;
